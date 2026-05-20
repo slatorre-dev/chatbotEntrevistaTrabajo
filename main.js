@@ -146,11 +146,64 @@ const careerState = {
   }
 };
 
+// Dynamic images for each timeline step (arrays to cycle through)
+const timelineImages = {
+  0: [
+    'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80',
+    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80'
+  ],
+  1: [
+    'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80',
+    'https://images.unsplash.com/photo-1531379410504-1b0f4f8f9f04?auto=format&fit=crop&w=1200&q=80'
+  ],
+  2: [
+    'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80',
+    'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80'
+  ],
+  3: [
+    'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80',
+    'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1200&q=80'
+  ]
+};
+
+let imageCycler = {
+  intervalId: null,
+  currentIndex: 0
+};
+
+function startImageCycler() {
+  stopImageCycler();
+  const step = careerState.index;
+  const imgs = timelineImages[step] || [];
+  if (!imgs.length) return;
+  const stepEl = document.querySelector(`.timeline-step[data-step="${step}"] .step-image`);
+  if (!stepEl) return;
+  // initialize
+  imageCycler.currentIndex = 0;
+  stepEl.style.backgroundImage = `url('${imgs[0]}')`;
+  imageCycler.intervalId = setInterval(() => {
+    imageCycler.currentIndex = (imageCycler.currentIndex + 1) % imgs.length;
+    // smooth fade via class toggle
+    stepEl.style.transition = 'background-image 600ms ease-in-out, transform 400ms ease';
+    stepEl.style.backgroundImage = `url('${imgs[imageCycler.currentIndex]}')`;
+  }, 3500);
+}
+
+function stopImageCycler() {
+  if (imageCycler.intervalId) {
+    clearInterval(imageCycler.intervalId);
+    imageCycler.intervalId = null;
+  }
+}
+
 function updateTimelineProgress() {
   const steps = document.querySelectorAll('.timeline-step');
   steps.forEach((step, index) => {
     step.classList.toggle('active', index === careerState.index);
   });
+  // update dynamic images for the active step
+  stopImageCycler();
+  startImageCycler();
 }
 
 function populateStepActions() {
@@ -259,6 +312,9 @@ function resetCareerQuiz() {
     recursoshumanos: 0
   };
   renderCareerQuestion();
+  // ensure cycler restarts
+  stopImageCycler();
+  startImageCycler();
 }
 
 function initCareerQuiz() {
