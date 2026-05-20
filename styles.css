@@ -317,6 +317,16 @@ section h2 {
   transform: translateY(-1px);
   box-shadow: 0 10px 18px rgba(15, 42, 86, 0.08);
 }
+
+/* Active image subtle animation */
+.timeline-step .step-image {
+  will-change: background-image, transform;
+  transition: transform 420ms ease, filter 420ms ease, opacity 420ms ease;
+}
+.timeline-step.active .step-image {
+  transform: scale(1.03);
+  filter: saturate(1.05) contrast(1.02);
+}
 .timeline-step h3 {
   margin: 0 0 8px;
 }
