@@ -1,0 +1,13 @@
+/* Estilos simples para la guía de entrevistas */
+:root{--bg:#f7f9fb;--card:#ffffff;--accent:#2b6cb0;--muted:#555}
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,Arial,Helvetica,sans-serif;background:var(--bg);color:#222;margin:0}
+.site-header{background:linear-gradient(90deg,var(--accent),#4aa3ff);color:#fff;padding:32px 16px}
+.site-header h1{margin:0 0 8px;font-size:clamp(1.4rem,2.2vw,2rem)}
+.container{max-width:900px;margin:24px auto;padding:0 16px}
+section{background:var(--card);padding:18px;border-radius:8px;margin-bottom:16px;box-shadow:0 1px 3px rgba(16,24,40,0.04)}
+h2{color:var(--accent);margin-top:0}
+ol li, ul li{margin:10px 0}
+.site-footer{text-align:center;padding:20px 10px;color:var(--muted);font-size:0.95rem}
+
+@media(min-width:900px){.container{padding:0}}
