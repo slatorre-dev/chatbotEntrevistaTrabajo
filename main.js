@@ -153,6 +153,35 @@ function updateTimelineProgress() {
   });
 }
 
+function populateStepActions() {
+  const steps = document.querySelectorAll('.timeline-step');
+  steps.forEach((step, index) => {
+    const actions = step.querySelector('.step-actions');
+    if (!actions) return;
+    if (index !== careerState.index) {
+      actions.innerHTML = '';
+      return;
+    }
+
+    const item = careerQuiz[index];
+    actions.innerHTML = item.options
+      .map(
+        (option) => `<button class="quiz-option" type="button" data-profile="${option.profile}">${option.text}</button>`
+      )
+      .join('');
+
+    actions.querySelectorAll('.quiz-option').forEach((button) => {
+      button.addEventListener('click', () => {
+        const profile = button.dataset.profile;
+        if (!profile) return;
+        careerState.scores[profile] += 1;
+        careerState.index += 1;
+        renderCareerQuestion();
+      });
+    });
+  });
+}
+
 function renderCareerQuestion() {
   const questionElement = document.getElementById('career-quiz-text');
   const optionsElement = document.getElementById('career-quiz-options');
@@ -174,24 +203,9 @@ function renderCareerQuestion() {
   const item = careerQuiz[careerState.index];
   stepElement.textContent = `Paso ${careerState.index + 1} de ${careerQuiz.length}`;
   questionElement.textContent = item.question;
-  result.textContent = 'Responde todas las preguntas para obtener tu resultado.';
+  result.textContent = 'Haz click en la tarjeta activa para ver y elegir tu respuesta.';
   restartButton.hidden = true;
-
-  optionsElement.innerHTML = item.options
-    .map(
-      (option) => `<button class="quiz-option" type="button" data-profile="${option.profile}">${option.text}</button>`
-    )
-    .join('');
-
-  optionsElement.querySelectorAll('.quiz-option').forEach((button) => {
-    button.addEventListener('click', () => {
-      const profile = button.dataset.profile;
-      if (!profile) return;
-      careerState.scores[profile] += 1;
-      careerState.index += 1;
-      renderCareerQuestion();
-    });
-  });
+  populateStepActions();
 }
 
 function getCareerResult() {

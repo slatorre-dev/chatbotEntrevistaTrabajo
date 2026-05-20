@@ -66,6 +66,12 @@ button {font: inherit;}
   font-size: clamp(2.5rem, 4vw, 3.6rem);
   line-height: 1.05;
 }
+.hero-tagline-main {
+  margin: 0 0 16px;
+  font-size: 1.25rem;
+  color: var(--accent);
+  font-weight: 700;
+}
 .hero-copy p {
   margin: 0 0 24px;
   max-width: 680px;
@@ -286,6 +292,30 @@ section h2 {
   background-size: cover;
   background-position: center;
   border: 1px solid rgba(15, 42, 86, 0.08);
+}
+.step-actions {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  margin-top: 16px;
+  grid-column: 1 / -1;
+}
+.step-actions .quiz-option {
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(15, 42, 86, 0.16);
+  border-radius: 16px;
+  background: #eef6ff;
+  padding: 14px 16px;
+  text-align: left;
+  color: var(--text);
+  font-weight: 600;
+}
+.step-actions .quiz-option:hover,
+.step-actions .quiz-option:focus {
+  background: rgba(63, 131, 199, 0.14);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(15, 42, 86, 0.08);
 }
 .timeline-step h3 {
   margin: 0 0 8px;
