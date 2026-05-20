@@ -44,6 +44,23 @@ button {font: inherit;}
   text-transform: uppercase;
   color: var(--accent-soft);
 }
+.hero-topline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.version-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255,255,255,0.92);
+  color: var(--accent);
+  font-size: 0.95rem;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 42, 86, 0.12);
+}
 .hero-copy h1 {
   margin: 0 0 18px;
   font-size: clamp(2.5rem, 4vw, 3.6rem);
@@ -178,26 +195,61 @@ section h2 {
   min-height: 70px;
   color: var(--text);
 }
-.career-grid {
+.highlight-panel {
+  background: rgba(63, 131, 199, 0.08);
+  border: 1px solid rgba(63, 131, 199, 0.18);
+}
+.question-card {
+  border: 1px solid rgba(15, 42, 86, 0.1);
+  border-radius: 22px;
+  padding: 24px;
+  background: #fff;
+}
+.quiz-step {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 0.86rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+}
+.quiz-options {
   display: grid;
   gap: 12px;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  margin-top: 18px;
+  margin-top: 16px;
 }
-.career-option {
-  border: 1px solid rgba(15, 42, 86, 0.12);
-  border-radius: 999px;
+.quiz-option {
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(15, 42, 86, 0.14);
   background: #fff;
-  padding: 12px 18px;
+  border-radius: 18px;
+  padding: 16px 18px;
+  text-align: left;
   font-weight: 600;
-  color: var(--accent);
-  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  color: var(--text);
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
-.career-option:hover,
-.career-option:focus {
-  background: rgba(63, 131, 199, 0.08);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 18px rgba(15, 42, 86, 0.08);
+.quiz-option:hover,
+.quiz-option:focus {
+  background: rgba(63, 131, 199, 0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(15, 42, 86, 0.08);
+}
+#career-quiz-result {
+  margin-top: 18px;
+  min-height: 120px;
+}
+#career-quiz-restart {
+  width: fit-content;
+  margin-top: 16px;
+}
+.career-result-block {
+  margin-top: 12px;
+}
+.quiz-tip {
+  margin-top: 16px;
+  color: var(--accent-soft);
 }
 #career-result {
   margin-top: 18px;

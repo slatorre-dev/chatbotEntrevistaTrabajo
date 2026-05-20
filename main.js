@@ -67,30 +67,183 @@ const challenges = [
 const careerPaths = {
   comunicacion: {
     title: 'Comunicación y creatividad',
-    description: 'Ideal si disfrutas hablar, escribir y trabajar con ideas. Estas salidas combinan comunicación y gestión de proyectos.',
+    description: 'Ideal si disfrutas transmitir ideas, contar historias y trabajar con equipos creativos.',
     options: ['Community Manager', 'Diseño de contenidos', 'Relaciones públicas']
   },
   digital: {
     title: 'Marketing digital',
-    description: 'Perfecto si te interesa la creatividad online, redes sociales y análisis de datos.',
+    description: 'Perfecto si te gusta combinar creatividad con datos y trabajar con herramientas digitales.',
     options: ['Social Media', 'Analista de marketing', 'SEO/SEM']
   },
   administracion: {
     title: 'Administración y organización',
-    description: 'Buen camino si te gusta el orden, la gestión de equipos y el trabajo con documentación y procesos.',
+    description: 'Buen camino si te encuentras cómodo planificando tareas, ordenando procesos y apoyando equipos.',
     options: ['Auxiliar administrativo', 'Gestión de proyectos', 'Control de calidad']
   },
   tecnologia: {
     title: 'Tecnología y programación',
-    description: 'Para quien disfruta resolver problemas, crear apps y trabajar con nuevas herramientas digitales.',
+    description: 'Para quien disfruta resolver problemas técnicos, construir soluciones y aprender nuevas herramientas.',
     options: ['Desarrollador web', 'Soporte técnico', 'Diseño UX']
   },
   recursoshumanos: {
     title: 'Recursos Humanos y gestión de personas',
-    description: 'Si te interesa el talento, la formación y el acompañamiento de equipos, esta área es muy atractiva.',
+    description: 'Si prefieres trabajar con personas, talento y clima dentro de equipos, esta área es para ti.',
     options: ['Selección de personal', 'Formación', 'Gestión del talento']
   }
 };
+
+const careerQuiz = [
+  {
+    question: '¿Qué te motiva más cuando trabajas?',
+    options: [
+      { text: 'Compartir ideas y crear mensajes claros', profile: 'comunicacion' },
+      { text: 'Diseñar soluciones que se vean y funcionen en internet', profile: 'digital' },
+      { text: 'Mantener el orden y ayudar a que todo avance bien', profile: 'administracion' },
+      { text: 'Resolver problemas con herramientas y tecnología', profile: 'tecnologia' },
+      { text: 'Acompañar a personas para que se sientan bien en el trabajo', profile: 'recursoshumanos' }
+    ]
+  },
+  {
+    question: '¿Qué prefieres aprender en una semana?',
+    options: [
+      { text: 'Escribir, diseñar o contar historias atractivas', profile: 'comunicacion' },
+      { text: 'Analizar datos y medir resultados en redes', profile: 'digital' },
+      { text: 'Organizar actividades y reuniones con claridad', profile: 'administracion' },
+      { text: 'Instalar, probar o programar herramientas nuevas', profile: 'tecnologia' },
+      { text: 'Practicar entrevistas y ayudar con formación', profile: 'recursoshumanos' }
+    ]
+  },
+  {
+    question: 'Cuando trabajas en grupo, normalmente eres quien...',
+    options: [
+      { text: 'Expresa ideas y ayuda a convencer con palabras', profile: 'comunicacion' },
+      { text: 'Propone campañas, diseños o contenidos digitales', profile: 'digital' },
+      { text: 'Hace seguimiento de tareas y mantiene la agenda', profile: 'administracion' },
+      { text: 'Busca soluciones técnicas y prueba nuevas opciones', profile: 'tecnologia' },
+      { text: 'Escucha, organiza formaciones y cuida relaciones', profile: 'recursoshumanos' }
+    ]
+  },
+  {
+    question: 'Para ti, el éxito en un trabajo es...',
+    options: [
+      { text: 'Poder comunicar bien y sentirme creativo', profile: 'comunicacion' },
+      { text: 'Ver resultados medibles y atraer atención online', profile: 'digital' },
+      { text: 'Cumplir metas con procesos ordenados y claros', profile: 'administracion' },
+      { text: 'Resolver problemas con lógica y tecnología', profile: 'tecnologia' },
+      { text: 'Mejorar el ambiente y ayudar a crecer a otras personas', profile: 'recursoshumanos' }
+    ]
+  }
+];
+
+const careerState = {
+  index: 0,
+  scores: {
+    comunicacion: 0,
+    digital: 0,
+    administracion: 0,
+    tecnologia: 0,
+    recursoshumanos: 0
+  }
+};
+
+function renderCareerQuestion() {
+  const questionElement = document.getElementById('career-quiz-text');
+  const optionsElement = document.getElementById('career-quiz-options');
+  const stepElement = document.getElementById('quiz-step');
+  const restartButton = document.getElementById('career-quiz-restart');
+  const result = document.getElementById('career-quiz-result');
+
+  if (!questionElement || !optionsElement || !stepElement || !result || !restartButton) return;
+
+  if (careerState.index >= careerQuiz.length) {
+    restartButton.hidden = false;
+    showCareerResult();
+    return;
+  }
+
+  const item = careerQuiz[careerState.index];
+  stepElement.textContent = `Pregunta ${careerState.index + 1} de ${careerQuiz.length}`;
+  questionElement.textContent = item.question;
+  result.textContent = 'Responde todas las preguntas para obtener tu resultado.';
+  restartButton.hidden = true;
+
+  optionsElement.innerHTML = item.options
+    .map(
+      (option) => `<button class="quiz-option" type="button" data-profile="${option.profile}">${option.text}</button>`
+    )
+    .join('');
+
+  optionsElement.querySelectorAll('.quiz-option').forEach((button) => {
+    button.addEventListener('click', () => {
+      const profile = button.dataset.profile;
+      if (!profile) return;
+      careerState.scores[profile] += 1;
+      careerState.index += 1;
+      renderCareerQuestion();
+    });
+  });
+}
+
+function getCareerResult() {
+  const scores = Object.entries(careerState.scores);
+  const sorted = scores.sort((a, b) => b[1] - a[1]);
+  const topScore = sorted[0][1];
+  if (topScore === 0) return [];
+  return sorted.filter(([, score]) => score === topScore).map(([profile]) => profile);
+}
+
+function showCareerResult() {
+  const resultElement = document.getElementById('career-quiz-result');
+  if (!resultElement) return;
+
+  const topProfiles = getCareerResult();
+  if (!topProfiles.length) {
+    resultElement.textContent = 'No se obtuvo una preferencia clara. Reinicia el reto y contesta otra vez.';
+    return;
+  }
+
+  const recommendations = topProfiles.map((profile) => {
+    const item = careerPaths[profile];
+    return `
+      <div class="career-result-block">
+        <p><strong>${item.title}</strong></p>
+        <p>${item.description}</p>
+        <p><strong>Salidas recomendadas:</strong></p>
+        <ul>${item.options.map((option) => `<li>${option}</li>`).join('')}</ul>
+      </div>
+    `;
+  }).join('');
+
+  const header = topProfiles.length > 1
+    ? 'Tus respuestas muestran dos perfiles candidatos:'
+    : 'Tu perfil más probable es:';
+
+  resultElement.innerHTML = `
+    <p><strong>${header}</strong></p>
+    ${recommendations}
+    <p class="quiz-tip"><strong>Reto extra:</strong> elige una de estas salidas y busca una oferta o proyecto donde puedas practicarla.</p>
+  `;
+}
+
+function resetCareerQuiz() {
+  careerState.index = 0;
+  careerState.scores = {
+    comunicacion: 0,
+    digital: 0,
+    administracion: 0,
+    tecnologia: 0,
+    recursoshumanos: 0
+  };
+  renderCareerQuestion();
+}
+
+function initCareerQuiz() {
+  const restartButton = document.getElementById('career-quiz-restart');
+  if (restartButton) {
+    restartButton.addEventListener('click', resetCareerQuiz);
+  }
+  resetCareerQuiz();
+}
 
 function setHeroTheme(index) {
   const hero = document.getElementById('hero-image');
@@ -155,9 +308,7 @@ function initButton() {
   button.addEventListener('click', randomQuestion);
   const challengeButton = document.getElementById('challenge-btn');
   if (challengeButton) challengeButton.addEventListener('click', randomChallenge);
-  document.querySelectorAll('.career-option').forEach((button) => {
-    button.addEventListener('click', () => recommendCareer(button.dataset.profile));
-  });
+  initCareerQuiz();
 }
 
 async function registerServiceWorker() {
@@ -187,10 +338,22 @@ async function registerServiceWorker() {
   }
 }
 
+function setSiteVersion(version) {
+  const badge = document.getElementById('site-version');
+  if (badge) badge.textContent = version || 'desconocida';
+}
+
 async function checkVersion() {
+  const storedVersion = localStorage.getItem('site-version');
+  if (storedVersion) setSiteVersion(storedVersion);
+
   try {
     const response = await fetch('version.txt', { cache: 'no-store' });
     const version = (await response.text()).trim();
+    if (!version) return;
+
+    setSiteVersion(version);
+
     const previous = localStorage.getItem('site-version');
     if (previous && previous !== version) {
       localStorage.setItem('site-version', version);

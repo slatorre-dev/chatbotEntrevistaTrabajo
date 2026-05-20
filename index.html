@@ -11,7 +11,10 @@
   <header class="site-header">
     <div class="hero-grid">
       <div class="hero-copy">
-        <span class="eyebrow">Preparación real para entrevistas</span>
+        <div class="hero-topline">
+          <span class="eyebrow">Preparación real para entrevistas</span>
+          <span class="version-badge">versión <strong id="site-version">cargando...</strong></span>
+        </div>
         <h1>Entrevistas de trabajo para alumnado</h1>
         <p>Responde con confianza, evita errores comunes y practica con preguntas reales usadas en entrevistas actuales.</p>
         <div class="hero-buttons">
@@ -71,17 +74,20 @@
       </div>
     </section>
 
-    <section id="career-paths">
-      <h2>Salidas profesionales recomendadas</h2>
-      <p>Como orientador, te ayudo a ligar tus intereses con opciones de trabajo reales y con demanda.</p>
-      <div class="career-grid">
-        <button class="career-option" data-profile="comunicacion">Comunicación</button>
-        <button class="career-option" data-profile="digital">Marketing Digital</button>
-        <button class="career-option" data-profile="administracion">Administración</button>
-        <button class="career-option" data-profile="tecnologia">Tecnología</button>
-        <button class="career-option" data-profile="recursoshumanos">Recursos Humanos</button>
+    <section id="career-quiz" class="interactive-panel highlight-panel">
+      <div class="panel-header">
+        <h2>Reto de orientación profesional</h2>
+        <p>Contesta estas preguntas para detectar el perfil que mejor se ajusta a tus intereses, estilo de trabajo y metas.</p>
       </div>
-      <div id="career-result" class="answer-card">Elige un área y te mostraré las salidas profesionales más adecuadas.</div>
+      <div class="panel-body">
+        <div id="career-quiz-card" class="question-card">
+          <span id="quiz-step" class="quiz-step">Pregunta 1 de 4</span>
+          <p id="career-quiz-text">Selecciona la respuesta que mejor describe cómo te sientes trabajando cada día.</p>
+          <div id="career-quiz-options" class="quiz-options"></div>
+        </div>
+        <button id="career-quiz-restart" class="secondary" hidden>Reiniciar reto</button>
+        <div id="career-quiz-result" class="answer-card">Completa el reto para recibir tu recomendación profesional.</div>
+      </div>
     </section>
 
     <section id="preguntas-frecuentes">
