@@ -3,245 +3,258 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>TinJobs - Guía de entrevistas y orientación FP</title>
+  <title>TinJobs · Tu red profesional</title>
   <link rel="stylesheet" href="styles.css">
-  <meta name="description" content="Recursos y ejemplos para preparar entrevistas de trabajo (preguntas frecuentes, respuestas adecuadas e inadecuadas, comportamiento y preguntas difíciles).">
+  <meta name="description" content="Red profesional para estudiantes, empresas y centros educativos. Orientación profesional, igualdad de género y ODS.">
 </head>
 <body>
-  <header class="site-header">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <div class="hero-topline">
-          <span class="eyebrow">Preparación real para entrevistas</span>
-          <span class="version-badge">versión <strong id="site-version">cargando...</strong></span>
+
+  <!-- ══ HUB LANDING ══════════════════════════════════════ -->
+  <div id="hub-landing" class="hub-landing">
+    <div class="hub-shapes" aria-hidden="true">
+      <span class="hshape s1"></span>
+      <span class="hshape s2"></span>
+      <span class="hshape s3"></span>
+    </div>
+
+    <header class="hub-header">
+      <span class="hub-logo">TinJobs</span>
+      <span class="version-badge">v<strong class="version-num">…</strong></span>
+    </header>
+
+    <div class="hub-hero">
+      <p class="hub-eyebrow">Red profesional · FP · Castilla-La Mancha</p>
+      <h1 class="hub-title">Conecta tu talento<br>con tu futuro</h1>
+      <p class="hub-desc">Una plataforma para estudiantes, empresas y centros educativos comprometidos con la igualdad y los Objetivos de Desarrollo Sostenible.</p>
+    </div>
+
+    <div class="hub-cards">
+      <button class="hub-card card-student" id="go-student">
+        <span class="hcard-icon" aria-hidden="true">🎓</span>
+        <div class="hcard-body">
+          <h2>Soy Estudiante</h2>
+          <p>Descubre tu perfil profesional, prepara entrevistas y conecta con empresas.</p>
         </div>
-        <h1>TinJobs</h1>
-        <p class="hero-tagline-main">Tu red profesional para alumnos, centros FP y empresas.</p>
-        <p>Responde con confianza, evita errores comunes y practica con preguntas reales usadas en entrevistas actuales.</p>
-        <div class="hero-buttons">
-          <button id="practice-question">Generar pregunta</button>
-          <a class="button secondary" href="#preguntas-frecuentes">Ver preguntas</a>
+        <div class="hcard-foot">
+          <div class="hods-tags">
+            <span class="htag t4">ODS 4</span>
+            <span class="htag t5">ODS 5</span>
+            <span class="htag t8">ODS 8</span>
+          </div>
+          <span class="hcard-cta">Explorar →</span>
         </div>
-        <div class="hero-stats">
-          <div><strong>9</strong> temas clave</div>
-          <div><strong>3</strong> prácticas rápidas</div>
-          <div><strong>1</strong> camino claro</div>
+      </button>
+
+      <button class="hub-card card-company" disabled>
+        <span class="hsoon">Próximamente</span>
+        <span class="hcard-icon" aria-hidden="true">🏢</span>
+        <div class="hcard-body">
+          <h2>Soy Empresa</h2>
+          <p>Encuentra talento joven formado en FP, comprometido y listo para crecer.</p>
         </div>
-      </div>
-      <div class="hero-image" id="hero-image">
-        <div class="hero-overlay"></div>
-        <div class="hero-tagline" id="hero-tagline">Tu mejor respuesta empieza con práctica.</div>
+        <div class="hcard-foot">
+          <div class="hods-tags">
+            <span class="htag t8">ODS 8</span>
+            <span class="htag t17">ODS 17</span>
+          </div>
+        </div>
+      </button>
+
+      <button class="hub-card card-center" disabled>
+        <span class="hsoon">Próximamente</span>
+        <span class="hcard-icon" aria-hidden="true">🏫</span>
+        <div class="hcard-body">
+          <h2>Soy Centro Educativo</h2>
+          <p>Gestiona prácticas FCT, orienta al alumnado y conecta con el tejido empresarial.</p>
+        </div>
+        <div class="hcard-foot">
+          <div class="hods-tags">
+            <span class="htag t4">ODS 4</span>
+            <span class="htag t10">ODS 10</span>
+          </div>
+        </div>
+      </button>
+    </div>
+
+    <div class="hub-ods-bar">
+      <p>Comprometidos con la Agenda 2030 de la ONU</p>
+      <div class="ods-circles">
+        <span class="oc c4"  title="ODS 4 · Educación de calidad">4</span>
+        <span class="oc c5"  title="ODS 5 · Igualdad de género">5</span>
+        <span class="oc c8"  title="ODS 8 · Trabajo decente">8</span>
+        <span class="oc c9"  title="ODS 9 · Innovación">9</span>
+        <span class="oc c10" title="ODS 10 · Reducción de desigualdades">10</span>
+        <span class="oc c13" title="ODS 13 · Acción por el clima">13</span>
       </div>
     </div>
-  </header>
+  </div>
 
-  <main class="container">
-    <section id="career-quiz" class="interactive-panel highlight-panel">
-      <div class="panel-header">
-        <div class="brand-label">TinJobs</div>
-        <h2>Reto de orientación profesional</h2>
-        <p>Descubre tu perfil con TinJobs: una red para alumnos, centros FP y empresas que buscan conectar talento con oportunidades.</p>
+  <!-- ══ SECCIÓN ESTUDIANTES ══════════════════════════════ -->
+  <div id="student-section" class="student-section" hidden>
+
+    <header class="stu-header">
+      <button class="back-btn" id="back-to-hub">← Volver</button>
+      <div class="stu-brand">
+        <span class="stu-logo">TinJobs</span>
+        <span class="stu-area">Área Estudiantes</span>
       </div>
-      <div class="timeline-steps">
-        <article class="timeline-step active" data-step="0">
-          <div class="step-marker">1</div>
-          <div>
-            <h3>Motivación principal</h3>
-            <p>Elige lo que más te inspira: creatividad, tecnología, organización o trabajo con personas.</p>
+      <span class="version-badge">v<strong class="version-num">…</strong></span>
+    </header>
+
+    <div class="stu-hero" id="stu-hero">
+      <div class="stu-hero-overlay"></div>
+      <div class="stu-hero-content">
+        <p class="stu-eyebrow">Orientación profesional · sin estereotipos de género</p>
+        <h1 id="stu-hero-title">Descubre el trabajo que te mueve</h1>
+        <p class="stu-hero-desc">4 preguntas para conocer tu perfil y conectar con salidas laborales reales, alineadas con los ODS.</p>
+        <button class="btn-hero" id="start-quiz-btn">Empezar orientación →</button>
+      </div>
+    </div>
+
+    <main class="container">
+
+      <section id="career-quiz" class="quiz-section">
+        <div class="quiz-top">
+          <div class="brand-label">TinJobs · Orientación profesional</div>
+          <h2>¿Cuál es tu perfil?</h2>
+          <p class="quiz-intro">Responde honestamente. No hay respuestas correctas ni perfiles mejores que otros.</p>
+          <div class="progress-wrap">
+            <div class="progress-track">
+              <div class="progress-fill" id="quiz-progress-fill"></div>
+            </div>
+            <span class="progress-label" id="quiz-step">Paso 1 de 4</span>
           </div>
-          <div class="step-image" style="background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80');"></div>
-          <div class="step-actions"></div>
-        </article>
-        <article class="timeline-step" data-step="1">
-          <div class="step-marker">2</div>
-          <div>
-            <h3>Tu estilo de aprendizaje</h3>
-            <p>Decide si prefieres aprender con proyectos prácticos, datos, procesos o personas.</p>
+        </div>
+
+        <div class="timeline-steps">
+          <article class="timeline-step active" data-step="0">
+            <div class="step-marker">1</div>
+            <div class="step-text">
+              <h3>¿Qué te mueve?</h3>
+              <p>Tu motivación principal al trabajar o estudiar.</p>
+            </div>
+            <div class="step-image" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80');"></div>
+            <div class="step-actions"></div>
+          </article>
+          <article class="timeline-step" data-step="1">
+            <div class="step-marker">2</div>
+            <div class="step-text">
+              <h3>¿Cuál es tu fortaleza?</h3>
+              <p>Lo que se te da mejor de forma natural.</p>
+            </div>
+            <div class="step-image" style="background-image:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80');"></div>
+            <div class="step-actions"></div>
+          </article>
+          <article class="timeline-step" data-step="2">
+            <div class="step-marker">3</div>
+            <div class="step-text">
+              <h3>¿Cómo prefieres trabajar?</h3>
+              <p>Tu entorno y estilo de trabajo ideal.</p>
+            </div>
+            <div class="step-image" style="background-image:url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80');"></div>
+            <div class="step-actions"></div>
+          </article>
+          <article class="timeline-step" data-step="3">
+            <div class="step-marker">4</div>
+            <div class="step-text">
+              <h3>¿Qué futuro te inspira?</h3>
+              <p>El impacto que quieres tener en el mundo.</p>
+            </div>
+            <div class="step-image" style="background-image:url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80');"></div>
+            <div class="step-actions"></div>
+          </article>
+        </div>
+
+        <div class="quiz-body">
+          <div id="career-quiz-card" class="question-card">
+            <p id="career-quiz-text" class="quiz-question">Selecciona la opción que mejor te describe.</p>
+            <div id="career-quiz-options" class="quiz-options"></div>
           </div>
-          <div class="step-image" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80');"></div>
-          <div class="step-actions"></div>
-        </article>
-        <article class="timeline-step" data-step="2">
-          <div class="step-marker">3</div>
-          <div>
-            <h3>Tu rol ideal</h3>
-            <p>Piensa si te ves liderando ideas, apoyando equipos, gestionando tareas o creando soluciones técnicas.</p>
+          <button id="career-quiz-restart" class="btn-secondary" hidden>↺ Repetir orientación</button>
+          <div id="career-quiz-result" class="result-card" hidden></div>
+        </div>
+      </section>
+
+      <div class="tools-grid">
+        <section id="random-practice" class="tool-card">
+          <div class="tool-head">
+            <span class="tool-emoji" aria-hidden="true">💬</span>
+            <div>
+              <h2>Practica una entrevista</h2>
+              <p>Preguntas reales para responder en voz alta.</p>
+            </div>
           </div>
-          <div class="step-image" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80');"></div>
-          <div class="step-actions"></div>
-        </article>
-        <article class="timeline-step" data-step="3">
-          <div class="step-marker">4</div>
-          <div>
-            <h3>Tu próximo paso</h3>
-            <p>Elige qué valoras más: impacto social, innovación digital, orden o el talento humano.</p>
+          <button id="random-btn" class="btn-tool">Generar pregunta</button>
+          <p id="practice-text" class="tool-text" hidden></p>
+          <div id="practice-answer" class="answer-card" hidden></div>
+        </section>
+
+        <section id="challenges" class="tool-card">
+          <div class="tool-head">
+            <span class="tool-emoji" aria-hidden="true">⚡</span>
+            <div>
+              <h2>Reto del día</h2>
+              <p>Un desafío de 5-10 min para ganar confianza.</p>
+            </div>
           </div>
-          <div class="step-image" style="background-image:url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80');"></div>
-          <div class="step-actions"></div>
-        </article>
+          <button id="challenge-btn" class="btn-tool">Generar reto</button>
+          <p id="challenge-text" class="tool-text" hidden></p>
+          <div id="challenge-result" class="answer-card" hidden></div>
+        </section>
       </div>
-      <div class="panel-body">
-        <div id="career-quiz-card" class="question-card">
-          <span id="quiz-step" class="quiz-step">Paso 1 de 4</span>
-          <p id="career-quiz-text">Selecciona la respuesta que mejor describe cómo te sientes trabajando cada día.</p>
-          <div id="career-quiz-options" class="quiz-options"></div>
+
+      <section id="preguntas-frecuentes">
+        <h2>Preguntas frecuentes en entrevistas</h2>
+        <div class="qa-grid">
+          <article>
+            <h3>Cuéntame sobre ti</h3>
+            <p><strong>Bien:</strong> Perfil presente-pasado-futuro conectado con el puesto.</p>
+            <p><strong>Evita:</strong> divagar o hablar solo de tu vida personal.</p>
+          </article>
+          <article>
+            <h3>¿Por qué esta empresa?</h3>
+            <p><strong>Bien:</strong> Valores, proyectos o cultura que encajan contigo.</p>
+            <p><strong>Evita:</strong> "porque necesito trabajo".</p>
+          </article>
+          <article>
+            <h3>Fortalezas</h3>
+            <p><strong>Bien:</strong> Ejemplos concretos de lo que haces bien.</p>
+            <p><strong>Evita:</strong> frases vagas sin evidencia.</p>
+          </article>
+          <article>
+            <h3>Debilidades</h3>
+            <p><strong>Bien:</strong> Una debilidad real y cómo la mejoras.</p>
+            <p><strong>Evita:</strong> clichés sin plan de mejora.</p>
+          </article>
+          <article>
+            <h3>Conflictos</h3>
+            <p><strong>Bien:</strong> Usa STAR y muestra aprendizaje.</p>
+            <p><strong>Evita:</strong> culpar a otras personas.</p>
+          </article>
+          <article>
+            <h3>¿Dónde te ves en 5 años?</h3>
+            <p><strong>Bien:</strong> Objetivos realistas alineados con el puesto.</p>
+            <p><strong>Evita:</strong> planes demasiado rígidos o indefinidos.</p>
+          </article>
         </div>
-        <button id="career-quiz-restart" class="secondary" hidden>Reiniciar reto</button>
-        <div id="career-quiz-result" class="answer-card">Completa el reto para recibir tu recomendación profesional.</div>
-      </div>
-    </section>
+      </section>
 
-    <section class="info-cards">
-      <article>
-        <h2>Investiga antes de contestar</h2>
-        <p>Conocer la empresa y el puesto te ayuda a dar respuestas relevantes y seguras.</p>
-      </article>
-      <article>
-        <h2>Comunica con historias</h2>
-        <p>Usa el método STAR: situación, tarea, acción y resultado para contar tus experiencias.</p>
-      </article>
-      <article>
-        <h2>Evita respuestas genéricas</h2>
-        <p>Mejor ejemplos concretos que frases hechas. Explica cómo hiciste las cosas.</p>
-      </article>
-    </section>
+      <section id="fuentes">
+        <h2>Fuentes y referencias</h2>
+        <ul>
+          <li>Guías de preparación de entrevistas de empleo (Indeed, Glassdoor).</li>
+          <li>Método STAR para comunicación profesional efectiva.</li>
+          <li>Objetivos de Desarrollo Sostenible — Agenda 2030 de la ONU.</li>
+          <li>Marco de competencias para el empleo juvenil (CEDEFOP).</li>
+        </ul>
+      </section>
 
-    <section id="random-practice" class="interactive-panel">
-      <div class="panel-header">
-        <h2>Pregunta de práctica aleatoria</h2>
-        <p>Pulsa el botón y recibe una pregunta real para contestar en voz alta.</p>
-      </div>
-      <div class="panel-body">
-        <p id="practice-text">Haz clic en el botón para generar una pregunta de entrevista.</p>
-        <button id="random-btn">Mostrar pregunta</button>
-        <div id="practice-answer" class="answer-card"></div>
-      </div>
-    </section>
+    </main>
 
-    <section id="challenges" class="interactive-panel">
-      <div class="panel-header">
-        <h2>Reto del día para prepararte</h2>
-        <p>Un desafío rápido para mejorar tu confianza antes de la próxima entrevista.</p>
-      </div>
-      <div class="panel-body">
-        <p id="challenge-text">Presiona el botón para recibir un reto útil.</p>
-        <button id="challenge-btn">Generar reto</button>
-        <div id="challenge-result" class="answer-card"></div>
-      </div>
-    </section>
-
-    <section id="preguntas-frecuentes">
-      <h2>Preguntas frecuentes y cómo responder</h2>
-      <div class="qa-grid">
-        <article>
-          <h3>Cuéntame sobre ti</h3>
-          <p><strong>Buena:</strong> Resume tu perfil con presente-pasado-futuro y conecta con el puesto.</p>
-          <p><strong>Evita:</strong> hablar solo de tu vida personal o divagar sin foco.</p>
-        </article>
-        <article>
-          <h3>¿Por qué esta empresa?</h3>
-          <p><strong>Buena:</strong> Menciona valores, proyectos o cultura e indica por qué encajas.</p>
-          <p><strong>Evita:</strong> respuestas como "porque necesito trabajo".</p>
-        </article>
-        <article>
-          <h3>Fortalezas</h3>
-          <p><strong>Buena:</strong> Da ejemplos concretos de lo que haces bien.</p>
-          <p><strong>Evita:</strong> frases vagas sin evidencia.</p>
-        </article>
-        <article>
-          <h3>Debilidades</h3>
-          <p><strong>Buena:</strong> Di una debilidad real y cómo la mejoras.</p>
-          <p><strong>Evita:</strong> clichés sin contenido real.</p>
-        </article>
-        <article>
-          <h3>Conflictos</h3>
-          <p><strong>Buena:</strong> Usa STAR y muestra aprendizaje.</p>
-          <p><strong>Evita:</strong> culpar a otros o no dar resultado.</p>
-        </article>
-        <article>
-          <h3>¿Dónde te ves?</h3>
-          <p><strong>Buena:</strong> Objetivos realistas y en línea con el puesto.</p>
-          <p><strong>Evita:</strong> planes demasiado generales o rígidos.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="comportamiento">
-      <h2>Cómo comportarse en la entrevista</h2>
-      <div class="feature-list">
-        <div>
-          <h3>Puntualidad</h3>
-          <p>Llega 5-10 minutos antes para estar tranquilo y concentrado.</p>
-        </div>
-        <div>
-          <h3>Actitud</h3>
-          <p>Mantén una postura abierta, contacto visual y escucha activa.</p>
-        </div>
-        <div>
-          <h3>Claridad</h3>
-          <p>Habla despacio, estructura tus ideas y evita muletillas.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="conseguir-trabajo">
-      <h2>Cómo aumentar tus posibilidades</h2>
-      <ul class="checklist">
-        <li>Adapta tu CV a la oferta con palabras clave.</li>
-        <li>Prepara historias en formato STAR.</li>
-        <li>Practica simulacros frente a una cámara.</li>
-        <li>Usa tu red de contactos y pide recomendaciones.</li>
-        <li>Conoce el rango salarial antes de hablar de sueldo.</li>
-        <li>Envía un email de agradecimiento tras la entrevista.</li>
-      </ul>
-    </section>
-
-    <section id="preguntas-dificiles">
-      <h2>Preguntas difíciles para practicar</h2>
-      <div class="qa-grid">
-        <article>
-          <h3>Peor decisión profesional</h3>
-          <p>Explica lo que pasó, cómo lo arreglaste y qué aprendiste.</p>
-        </article>
-        <article>
-          <h3>Reducir presupuesto</h3>
-          <p>Describe cómo priorizarías tareas y mantendrías resultados.</p>
-        </article>
-        <article>
-          <h3>Error bajo tu responsabilidad</h3>
-          <p>Cuenta la situación, tu acción y el aprendizaje.</p>
-        </article>
-        <article>
-          <h3>Compañero que no cumple</h3>
-          <p>Enfócate en comunicación y solución, no en críticas.</p>
-        </article>
-        <article>
-          <h3>Información confidencial</h3>
-          <p>Subraya ética, normas y consulta con tu responsable.</p>
-        </article>
-        <article>
-          <h3>Proyecto fuera de tu experiencia</h3>
-          <p>Explica cómo investigarías, pedirías apoyo y avanzarías.</p>
-        </article>
-      </div>
-      <p class="tip"><strong>Consejo:</strong> termina siempre con el aprendizaje o resultado positivo.</p>
-    </section>
-
-    <section id="fuentes">
-      <h2>¿De dónde vienen estas preguntas y respuestas?</h2>
-      <ul>
-        <li>Guías actuales de preparación de entrevistas de empleo.</li>
-        <li>Recursos de Indeed y Glassdoor sobre preguntas frecuentes.</li>
-        <li>Consejos sobre el método STAR y comunicación profesional.</li>
-        <li>Buenas prácticas de comportamiento y seguimiento.</li>
-      </ul>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <p>Creado para uso educativo y para ayudarte a preparar entrevistas con seguridad.</p>
-  </footer>
+    <footer class="site-footer">
+      <p>TinJobs · Uso educativo · Igualdad de género · ODS · <span class="version-num-footer"></span></p>
+    </footer>
+  </div>
 
   <script src="main.js"></script>
 </body>
