@@ -146,6 +146,13 @@ const careerState = {
   }
 };
 
+function updateTimelineProgress() {
+  const steps = document.querySelectorAll('.timeline-step');
+  steps.forEach((step, index) => {
+    step.classList.toggle('active', index === careerState.index);
+  });
+}
+
 function renderCareerQuestion() {
   const questionElement = document.getElementById('career-quiz-text');
   const optionsElement = document.getElementById('career-quiz-options');
@@ -155,14 +162,17 @@ function renderCareerQuestion() {
 
   if (!questionElement || !optionsElement || !stepElement || !result || !restartButton) return;
 
+  updateTimelineProgress();
+
   if (careerState.index >= careerQuiz.length) {
+    stepElement.textContent = `Resultado`;
     restartButton.hidden = false;
     showCareerResult();
     return;
   }
 
   const item = careerQuiz[careerState.index];
-  stepElement.textContent = `Pregunta ${careerState.index + 1} de ${careerQuiz.length}`;
+  stepElement.textContent = `Paso ${careerState.index + 1} de ${careerQuiz.length}`;
   questionElement.textContent = item.question;
   result.textContent = 'Responde todas las preguntas para obtener tu resultado.';
   restartButton.hidden = true;
