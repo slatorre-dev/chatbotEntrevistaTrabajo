@@ -17,7 +17,10 @@ jobs:
         with:
           persist-credentials: true
 
-      - name: Bump version file
+      - name: Bump version file and update CHANGELOG
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_SHA: ${{ github.sha }}
         run: |
           if [ ! -f version.txt ]; then echo "0.1.0" > version.txt; fi
           ver=$(cat version.txt)
@@ -25,10 +28,19 @@ jobs:
           patch=$((patch + 1))
           new="$major.$minor.$patch"
           echo "$new" > version.txt
+          # Crear CHANGELOG.md si no existe y añadir entrada
+          if [ ! -f CHANGELOG.md ]; then
+            echo "# Changelog" > CHANGELOG.md
+            echo "" >> CHANGELOG.md
+          fi
+          echo "## $new - $(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> CHANGELOG.md
+          echo "- Versión generada automáticamente por workflow en commit ${GITHUB_SHA} por ${GITHUB_ACTOR}" >> CHANGELOG.md
+          echo "- Referencia: memoria_claude.md" >> CHANGELOG.md
+          echo "" >> CHANGELOG.md
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add version.txt
-          git commit -m "chore: bump version to $new [skip ci]" || echo "no changes to commit"
+          git add version.txt CHANGELOG.md
+          git commit -m "chore: bump version to $new and update CHANGELOG [skip ci]" || echo "no changes to commit"
           git push
 
       - name: Output
