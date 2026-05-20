@@ -4,7 +4,7 @@ const path = require('path');
 
 const root = path.resolve(__dirname);
 const dist = path.join(root, 'dist');
-const filesToCopy = ['index.html','styles.css','README.md','memoria_claude.md','version.txt','main.js'];
+const filesToCopy = ['index.html','styles.css','README.md','memoria_claude.md','version.txt','main.js','sw.js'];
 
 function ensureDir(dir) { if (!fs.existsSync(dir)) fs.mkdirSync(dir,{recursive:true}); }
 function copyFile(src, dest) { ensureDir(path.dirname(dest)); fs.copyFileSync(src,dest); }
