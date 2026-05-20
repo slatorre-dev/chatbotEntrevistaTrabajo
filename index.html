@@ -9,108 +9,169 @@
 </head>
 <body>
   <header class="site-header">
-    <h1>Guía para entrevistas de trabajo</h1>
-    <p>Material para alumnos: preguntas frecuentes, respuestas modelo, cómo comportarse y preguntas difíciles para practicar.</p>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Preparación real para entrevistas</span>
+        <h1>Entrevistas de trabajo para alumnado</h1>
+        <p>Responde con confianza, evita errores comunes y practica con preguntas reales usadas en entrevistas actuales.</p>
+        <div class="hero-buttons">
+          <button id="practice-question">Generar pregunta</button>
+          <a class="button secondary" href="#preguntas-frecuentes">Ver preguntas</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>9</strong> temas clave</div>
+          <div><strong>3</strong> prácticas rápidas</div>
+          <div><strong>1</strong> camino claro</div>
+        </div>
+      </div>
+      <div class="hero-image" id="hero-image">
+        <div class="hero-overlay"></div>
+        <div class="hero-tagline" id="hero-tagline">Tu mejor respuesta empieza con práctica.</div>
+      </div>
+    </div>
   </header>
 
   <main class="container">
+    <section class="info-cards">
+      <article>
+        <h2>Investiga antes de contestar</h2>
+        <p>Conocer la empresa y el puesto te ayuda a dar respuestas relevantes y seguras.</p>
+      </article>
+      <article>
+        <h2>Comunica con historias</h2>
+        <p>Usa el método STAR: situación, tarea, acción y resultado para contar tus experiencias.</p>
+      </article>
+      <article>
+        <h2>Evita respuestas genéricas</h2>
+        <p>Mejor ejemplos concretos que frases hechas. Explica cómo hiciste las cosas.</p>
+      </article>
+    </section>
+
+    <section id="random-practice" class="interactive-panel">
+      <div class="panel-header">
+        <h2>Pregunta de práctica aleatoria</h2>
+        <p>Pulsa el botón y recibe una pregunta real para contestar en voz alta.</p>
+      </div>
+      <div class="panel-body">
+        <p id="practice-text">Haz clic en el botón para generar una pregunta de entrevista.</p>
+        <button id="random-btn">Mostrar pregunta</button>
+        <div id="practice-answer" class="answer-card"></div>
+      </div>
+    </section>
+
     <section id="preguntas-frecuentes">
       <h2>Preguntas frecuentes y cómo responder</h2>
-      <ol>
-        <li>
-          <strong>Cuéntame sobre ti.</strong>
-          <p><em>Respuesta adecuada:</em> Resumen breve (presente-pasado-futuro) relacionado con el puesto. Ej.: "Soy estudiante de... he realizado prácticas en... y quiero desarrollarme en..."</p>
-          <p><em>Respuesta inadecuada:</em> Detallar la vida personal o divagar sin relación al puesto.</p>
-        </li>
-        <li>
-          <strong>¿Por qué te interesa esta empresa?</strong>
-          <p><em>Respuesta adecuada:</em> Muestra investigación y alineación con valores/objetivos de la empresa.</p>
-          <p><em>Respuesta inadecuada:</em> "Me interesa porque tengo tiempo" o respuestas genéricas sin prueba de investigación.</p>
-        </li>
-        <li>
-          <strong>¿Cuáles son tus fortalezas?</strong>
-          <p><em>Respuesta adecuada:</em> Ejemplos concretos y medibles que muestren cómo aplicas esa fortaleza.</p>
-          <p><em>Respuesta inadecuada:</em> Listar cualidades vagas sin evidencia: "Soy trabajador" sin contexto.</p>
-        </li>
-        <li>
-          <strong>¿Cuál es tu mayor debilidad?</strong>
-          <p><em>Respuesta adecuada:</em> Debilidad real y pasos concretos para mejorar (evitar clichés).</p>
-          <p><em>Respuesta inadecuada:</em> "Soy perfeccionista" sin explicar mejoras reales.</p>
-        </li>
-        <li>
-          <strong>Háblame de un conflicto que resolviste.</strong>
-          <p><em>Respuesta adecuada:</em> Usar método STAR (Situación, Tarea, Acción, Resultado) con datos.</p>
-          <p><em>Respuesta inadecuada:</em> Culpar a otros o no explicar resultados.</p>
-        </li>
-        <li>
-          <strong>¿Dónde te ves en 5 años?</strong>
-          <p><em>Respuesta adecuada:</em> Objetivos realistas alineados con el puesto y el desarrollo profesional.</p>
-          <p><em>Respuesta inadecuada:</em> Respuestas vagas o demasiado rígidas que muestren falta de interés.</p>
-        </li>
-        <li>
-          <strong>¿Por qué dejaste tu último trabajo?</strong>
-          <p><em>Respuesta adecuada:</em> Enfocar en crecimiento y búsqueda de nuevos desafíos; mantener positividad.</p>
-          <p><em>Respuesta inadecuada:</em> Criticar al anterior jefe o empresa con tono negativo.</p>
-        </li>
-        <li>
-          <strong>¿Cuánto esperas cobrar?</strong>
-          <p><em>Respuesta adecuada:</em> Dar un rango investigado y mostrar flexibilidad; justificarlo con experiencia.</p>
-          <p><em>Respuesta inadecuada:</em> Pedir una cifra arbitraria sin referencia o evitar la pregunta con evasivas.</p>
-        </li>
-        <li>
-          <strong>¿Tienes alguna pregunta para nosotros?</strong>
-          <p><em>Respuesta adecuada:</em> Preguntas sobre retos del puesto, próximos proyectos o cultura del equipo.</p>
-          <p><em>Respuesta inadecuada:</em> "No, ya me lo habéis explicado todo" o solo preguntar por vacaciones/sueldo al inicio.</p>
-        </li>
-      </ol>
+      <div class="qa-grid">
+        <article>
+          <h3>Cuéntame sobre ti</h3>
+          <p><strong>Buena:</strong> Resume tu perfil con presente-pasado-futuro y conecta con el puesto.</p>
+          <p><strong>Evita:</strong> hablar solo de tu vida personal o divagar sin foco.</p>
+        </article>
+        <article>
+          <h3>¿Por qué esta empresa?</h3>
+          <p><strong>Buena:</strong> Menciona valores, proyectos o cultura e indica por qué encajas.</p>
+          <p><strong>Evita:</strong> respuestas como "porque necesito trabajo".</p>
+        </article>
+        <article>
+          <h3>Fortalezas</h3>
+          <p><strong>Buena:</strong> Da ejemplos concretos de lo que haces bien.</p>
+          <p><strong>Evita:</strong> frases vagas sin evidencia.</p>
+        </article>
+        <article>
+          <h3>Debilidades</h3>
+          <p><strong>Buena:</strong> Di una debilidad real y cómo la mejoras.</p>
+          <p><strong>Evita:</strong> clichés sin contenido real.</p>
+        </article>
+        <article>
+          <h3>Conflictos</h3>
+          <p><strong>Buena:</strong> Usa STAR y muestra aprendizaje.</p>
+          <p><strong>Evita:</strong> culpar a otros o no dar resultado.</p>
+        </article>
+        <article>
+          <h3>¿Dónde te ves?</h3>
+          <p><strong>Buena:</strong> Objetivos realistas y en línea con el puesto.</p>
+          <p><strong>Evita:</strong> planes demasiado generales o rígidos.</p>
+        </article>
+      </div>
     </section>
 
     <section id="comportamiento">
       <h2>Cómo comportarse en la entrevista</h2>
-      <ul>
-        <li>Llega puntual (5-10 minutos antes).</li>
-        <li>Vístete acorde al puesto; mejor formal-casual si dudas.</li>
-        <li>Mantén contacto visual y postura abierta; escucha activamente.</li>
-        <li>Habla con claridad y evita muletillas; responde de forma estructurada.</li>
-        <li>Se honesto: si no sabes algo, explica cómo lo abordarías.</li>
-        <li>Lleva copias del CV y ejemplos de trabajos si aplica.</li>
-        <li>Al finalizar, agradece y pregunta por los siguientes pasos; envía un email de agradecimiento.</li>
-      </ul>
+      <div class="feature-list">
+        <div>
+          <h3>Puntualidad</h3>
+          <p>Llega 5-10 minutos antes para estar tranquilo y concentrado.</p>
+        </div>
+        <div>
+          <h3>Actitud</h3>
+          <p>Mantén una postura abierta, contacto visual y escucha activa.</p>
+        </div>
+        <div>
+          <h3>Claridad</h3>
+          <p>Habla despacio, estructura tus ideas y evita muletillas.</p>
+        </div>
+      </div>
     </section>
 
     <section id="conseguir-trabajo">
-      <h2>Cómo aumentar tus posibilidades de conseguir el puesto</h2>
-      <ul>
-        <li>Investiga la empresa y adapta tu CV a la oferta (palabras clave).</li>
-        <li>Prepara 5-7 historias versátiles en formato STAR.</li>
-        <li>Practica simulacros de entrevista con compañeros o ante la cámara.</li>
-        <li>Red de contactos: pide recomendaciones y contacta a empleados en LinkedIn.</li>
-        <li>Aprende a negociar; conoce el rango salarial del mercado.</li>
-        <li>Haz seguimiento: email de agradecimiento y recordatorio de interés.</li>
+      <h2>Cómo aumentar tus posibilidades</h2>
+      <ul class="checklist">
+        <li>Adapta tu CV a la oferta con palabras clave.</li>
+        <li>Prepara historias en formato STAR.</li>
+        <li>Practica simulacros frente a una cámara.</li>
+        <li>Usa tu red de contactos y pide recomendaciones.</li>
+        <li>Conoce el rango salarial antes de hablar de sueldo.</li>
+        <li>Envía un email de agradecimiento tras la entrevista.</li>
       </ul>
     </section>
 
     <section id="preguntas-dificiles">
-      <h2>Preguntas difíciles para practicar (para el solicitante)</h2>
-      <p>Estas preguntas ayudan a preparar respuestas bajo presión y muestran pensamiento crítico.</p>
+      <h2>Preguntas difíciles para practicar</h2>
+      <div class="qa-grid">
+        <article>
+          <h3>Peor decisión profesional</h3>
+          <p>Explica lo que pasó, cómo lo arreglaste y qué aprendiste.</p>
+        </article>
+        <article>
+          <h3>Reducir presupuesto</h3>
+          <p>Describe cómo priorizarías tareas y mantendrías resultados.</p>
+        </article>
+        <article>
+          <h3>Error bajo tu responsabilidad</h3>
+          <p>Cuenta la situación, tu acción y el aprendizaje.</p>
+        </article>
+        <article>
+          <h3>Compañero que no cumple</h3>
+          <p>Enfócate en comunicación y solución, no en críticas.</p>
+        </article>
+        <article>
+          <h3>Información confidencial</h3>
+          <p>Subraya ética, normas y consulta con tu responsable.</p>
+        </article>
+        <article>
+          <h3>Proyecto fuera de tu experiencia</h3>
+          <p>Explica cómo investigarías, pedirías apoyo y avanzarías.</p>
+        </article>
+      </div>
+      <p class="tip"><strong>Consejo:</strong> termina siempre con el aprendizaje o resultado positivo.</p>
+    </section>
+
+    <section id="fuentes">
+      <h2>¿De dónde vienen estas preguntas y respuestas?</h2>
       <ul>
-        <li>Describe la peor decisión profesional que has tomado y qué aprendiste.</li>
-        <li>Si yo te pidiera que reduzcas nuestro presupuesto un 30%, ¿qué harías?</li>
-        <li>Cuéntame sobre un error que pasó por tu responsabilidad y cómo lo solucionaste.</li>
-        <li>¿Cómo manejarías a un compañero que no cumple con sus plazos?</li>
-        <li>¿Qué harías si encuentras información confidencial filtrada dentro de la empresa?</li>
-        <li>Dame un ejemplo de una situación en la que tomaste una decisión impopular.</li>
-        <li>Si te dieran un proyecto fuera de tu experiencia, ¿cómo lo abordarías?</li>
+        <li>Guías actuales de preparación de entrevistas de empleo.</li>
+        <li>Recursos de Indeed y Glassdoor sobre preguntas frecuentes.</li>
+        <li>Consejos sobre el método STAR y comunicación profesional.</li>
+        <li>Buenas prácticas de comportamiento y seguimiento.</li>
       </ul>
-      <p><strong>Consejo:</strong> para estas preguntas usa el método STAR y termina siempre con el aprendizaje o resultado.</p>
     </section>
 
   </main>
 
   <footer class="site-footer">
-    <p>Creado para uso educativo. ¿Quieres que genere una versión interactiva o ejercicios de práctica?</p>
+    <p>Creado para uso educativo y para ayudarte a preparar entrevistas con seguridad.</p>
   </footer>
+
+  <script src="main.js"></script>
 </body>
-<script src="main.js"></script>
-</html>
 </html>
