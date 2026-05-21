@@ -12,8 +12,35 @@ const odsInfo = {
   17: { label: 'Alianzas globales',           color: '#19486A' },
 };
 
-/* ══ 10 PERFILES ALUMNADO — IES Juan Bosco Alcázar ══ */
+/* ══ 11 PERFILES ALUMNADO — IES Juan Bosco Alcázar ══ */
 const students = [
+  {
+    id: 0,
+    initials: 'CM',
+    avatarColor: '#f43f5e',
+    name: 'Carmen Mena Octavio',
+    cycle: 'CFGS Marketing y Publicidad',
+    school: 'IES Juan Bosco · Alcázar de San Juan',
+    available: true,
+    availableDate: 'Mar 2026',
+    location: 'Alcázar de San Juan, Castilla-La Mancha',
+    linkedin: 'carmen-mena-octavio',
+    about: 'Alumna de 2º CFGS Marketing y Publicidad. Apasionada de la estrategia de marca, el storytelling y la comunicación digital con impacto social. Combina creatividad y datos para construir campañas que realmente conectan con las personas. Busco FP Dual en agencia de comunicación o empresa con visión de marca fuerte.',
+    skills: [
+      { name: 'Estrategia de marca',   level: 'avanzado' },
+      { name: 'Marketing digital',     level: 'avanzado' },
+      { name: 'Adobe Photoshop / AI',  level: 'avanzado' },
+      { name: 'Google Analytics / Ads',level: 'medio' },
+      { name: 'Copywriting SEO',       level: 'medio' },
+      { name: 'Canva / Figma',         level: 'basico' },
+    ],
+    projects: [
+      { icon: '📣', title: 'Campaña "FP Sin Límites"', desc: 'Campaña de comunicación para visibilizar la FP entre jóvenes. Vídeo viral con +12.000 visualizaciones en Instagram y TikTok', tags: ['Redes sociales', 'Vídeo', 'Storytelling', 'ODS 4'] },
+      { icon: '🛍️', title: 'Rebranding artesanía local', desc: 'Rediseño de identidad visual y estrategia de contenidos para cooperativa de artesanas de La Mancha. Aumento del 40% en ventas online', tags: ['Branding', 'Redes sociales', 'E-commerce', 'Fotografía'] },
+    ],
+    verifiedBy: { name: 'Prof. I. Castillo', skills: 6 },
+    ods: [5, 8, 10],
+  },
   {
     id: 1,
     initials: 'MT',
@@ -25,7 +52,7 @@ const students = [
     availableDate: 'Sep 2025',
     location: 'Alcázar de San Juan, Castilla-La Mancha',
     github: 'marcos-torres',
-    about: 'Alumno de 2º CFGM Electrónica y Automatismo. Apasionado del IoT, la domótica y la automatización industrial. Busco FCT en empresa del sector electrónico o industrial donde poder aprender de profesionales del sector.',
+    about: 'Alumno de 2º CFGM Electrónica y Automatismo. Apasionado del IoT, la domótica y la automatización industrial. Busco FP Dual en empresa del sector electrónico o industrial donde poder aprender de profesionales del sector.',
     skills: [
       { name: 'Soldadura SMD',      level: 'avanzado' },
       { name: 'Osciloscopio',       level: 'avanzado' },
@@ -52,7 +79,7 @@ const students = [
     availableDate: 'Sep 2025',
     location: 'Alcázar de San Juan, Castilla-La Mancha',
     github: 'lucia-herrero-auto',
-    about: 'Alumna de 2º CFGS Automatización y Robótica Industrial. Apasionada de la robótica colaborativa, los sistemas SCADA y el control de procesos industriales. Busco FCT en empresa del sector industrial o de automatización donde seguir creciendo como técnica de automatización.',
+    about: 'Alumna de 2º CFGS Automatización y Robótica Industrial. Apasionada de la robótica colaborativa, los sistemas SCADA y el control de procesos industriales. Busco FP Dual en empresa del sector industrial o de automatización donde seguir creciendo como técnica de automatización.',
     skills: [
       { name: 'CODESYS / PLC',      level: 'avanzado' },
       { name: 'Robótica ABB / UR',  level: 'avanzado' },
@@ -104,7 +131,7 @@ const students = [
     available: true,
     availableDate: 'Ene 2025',
     location: 'Alcázar de San Juan, Castilla-La Mancha',
-    about: 'Alumna de 2º CFGM Cuidados Auxiliares de Enfermería. Vocación clara hacia la atención geriátrica y la dependencia. Busco FCT en residencia de mayores o centro de salud de la comarca para adquirir experiencia real en entornos clínicos.',
+    about: 'Alumna de 2º CFGM Cuidados Auxiliares de Enfermería. Vocación clara hacia la atención geriátrica y la dependencia. Busco FP Dual en residencia de mayores o centro de salud de la comarca para adquirir experiencia real en entornos clínicos.',
     skills: [
       { name: 'Cuidados básicos',    level: 'avanzado' },
       { name: 'Primeros auxilios',   level: 'avanzado' },
@@ -131,7 +158,7 @@ const students = [
     availableDate: 'Mar 2025',
     location: 'Alcázar de San Juan, Castilla-La Mancha',
     github: 'diegoram-dev',
-    about: 'Alumno de 2º CFGS DAW. Me apasiona el desarrollo frontend y la experiencia de usuario. Contribuyo a proyectos open source y busco FCT en empresa de desarrollo o agencia digital donde poder crecer dentro de un equipo real.',
+    about: 'Alumno de 2º CFGS DAW. Me apasiona el desarrollo frontend y la experiencia de usuario. Contribuyo a proyectos open source y busco FP Dual en empresa de desarrollo o agencia digital donde poder crecer dentro de un equipo real.',
     skills: [
       { name: 'JavaScript / React', level: 'avanzado' },
       { name: 'HTML5 / CSS3',       level: 'avanzado' },
@@ -184,7 +211,7 @@ const students = [
     available: true,
     availableDate: 'Ene 2026',
     location: 'Alcázar de San Juan, Castilla-La Mancha',
-    about: 'Alumno de 2º CFGM Cuidados Auxiliares de Enfermería. La vocación de cuidar no entiende de género. Me apasiona la atención a personas mayores y la geriatría. Busco FCT en residencia o centro de salud donde aprender de la mano de profesionales comprometidos con la dignidad de las personas.',
+    about: 'Alumno de 2º CFGM Cuidados Auxiliares de Enfermería. La vocación de cuidar no entiende de género. Me apasiona la atención a personas mayores y la geriatría. Busco FP Dual en residencia o centro de salud donde aprender de la mano de profesionales comprometidos con la dignidad de las personas.',
     skills: [
       { name: 'Cuidados básicos',    level: 'avanzado' },
       { name: 'Primeros auxilios',   level: 'avanzado' },
@@ -211,7 +238,7 @@ const students = [
     availableDate: 'Sep 2025',
     location: 'Alcázar de San Juan, Castilla-La Mancha',
     github: 'fatima-ar-elec',
-    about: 'Alumna de 2º CFGM Instalaciones Eléctricas y Automáticas. Especializada en instalaciones de baja tensión, domótica KNX y energías renovables. Demuestra cada día que la ingeniería eléctrica tiene muchas caras. Busco FCT en empresa instaladora o del sector de las renovables en Castilla-La Mancha.',
+    about: 'Alumna de 2º CFGM Instalaciones Eléctricas y Automáticas. Especializada en instalaciones de baja tensión, domótica KNX y energías renovables. Demuestra cada día que la ingeniería eléctrica tiene muchas caras. Busco FP Dual en empresa instaladora o del sector de las renovables en Castilla-La Mancha.',
     skills: [
       { name: 'Instalaciones BT',    level: 'avanzado' },
       { name: 'Cuadros eléctricos',  level: 'avanzado' },
@@ -238,7 +265,7 @@ const students = [
     availableDate: 'Jun 2026',
     location: 'Alcázar de San Juan, Castilla-La Mancha',
     linkedin: 'ruben-almagro-diaz',
-    about: 'Alumno de 2º CFGS Administración y Finanzas. Apasionado del análisis financiero, la contabilidad de gestión y la transformación digital de los procesos administrativos. Busco FCT en empresa o asesoría donde unir el rigor numérico con las nuevas herramientas digitales.',
+    about: 'Alumno de 2º CFGS Administración y Finanzas. Apasionado del análisis financiero, la contabilidad de gestión y la transformación digital de los procesos administrativos. Busco FP Dual en empresa o asesoría donde unir el rigor numérico con las nuevas herramientas digitales.',
     skills: [
       { name: 'Contabilidad analítica', level: 'avanzado' },
       { name: 'Excel / Power BI',       level: 'avanzado' },
@@ -287,21 +314,21 @@ const students = [
 const mockOffers = [
   {
     id: 1, logo: '⚙️', company: 'Grupo Industrial CLM', sector: 'Industria & Automatización',
-    title: 'FCT Técnico/a Electrónica y Automatismo', type: 'FCT',
+    title: 'FCT Técnico/a Electrónica y Automatismo', type: 'FP Dual',
     cycle: 'CFGM Electrónica y Automatismo', location: 'Alcázar de San Juan', duration: '400 h', start: 'Sep 2025',
     description: 'Empresa agroalimentaria de la comarca busca alumno/a de CFGM Electrónica para FCT. Colaborará en mantenimiento de PLCs Siemens S7, sistemas de control de líneas de producción y diagnóstico de fallos electrónicos.',
     requirements: ['CFGM Electrónica cursando', 'Conocimientos básicos de PLCs', 'Disponibilidad en turno de mañana', 'Carnet de conducir (valorable)'],
   },
   {
     id: 2, logo: '💻', company: 'Digital Agency Sur', sector: 'Desarrollo Web & Marketing Digital',
-    title: 'FCT Desarrollador/a Web Frontend', type: 'FCT',
+    title: 'FCT Desarrollador/a Web Frontend', type: 'FP Dual',
     cycle: 'CFGS Desarrollo de Aplicaciones Web', location: 'Tomelloso / Teletrabajo', duration: '370 h', start: 'Mar 2025',
-    description: 'Agencia digital de la comarca busca alumno/a de DAW para FCT en proyectos reales de clientes locales. Trabajará en interfaces con React, optimización de webs WordPress y testing de funcionalidades.',
+    description: 'Agencia digital de la comarca busca alumno/a de DAW para FP Dual en proyectos reales de clientes locales. Trabajará en interfaces con React, optimización de webs WordPress y testing de funcionalidades.',
     requirements: ['CFGS DAW cursando', 'HTML / CSS / JavaScript básico', 'Git y control de versiones', 'Actitud proactiva y ganas de aprender'],
   },
   {
     id: 3, logo: '❤️', company: 'Residencia "La Mancha"', sector: 'Servicios Sociales & Salud',
-    title: 'FCT Auxiliar de Cuidados', type: 'FCT',
+    title: 'FCT Auxiliar de Cuidados', type: 'FP Dual',
     cycle: 'CFGM Cuidados Auxiliares de Enfermería', location: 'Alcázar de San Juan', duration: '400 h', start: 'Ene 2025',
     description: 'Residencia de 120 plazas busca alumno/a de CAE para FCT con supervisión directa de enfermería. Participará en cuidados básicos, higiene, movilizaciones y registros. Posibilidad de incorporación posterior.',
     requirements: ['CFGM CAE cursando', 'Sensibilidad hacia personas mayores', 'Certificado de delitos sexuales', 'Vacunación hepatitis B recomendable'],
@@ -317,6 +344,7 @@ const mockOffers = [
 
 /* ══ TUTOR — tabla seguimiento ══════════════════════ */
 const mockStudentsTable = [
+  { initials:'CM', name:'Carmen Mena Octavio',    cycle:'CFGS Marketing',          company:'Digital Agency Sur',    status:'firmado',   label:'Conv. Firmado',    weeks:'—' },
   { initials:'MT', name:'Marcos Torres Ruiz',    cycle:'CFGM Electrónica',       company:'Grupo Industrial CLM',   status:'en-curso',  label:'En Curso',         weeks:'8/16' },
   { initials:'LH', name:'Lucía Herrero Sánchez', cycle:'CFGS Automatización',    company:'IndustrialCLM Robótica', status:'firmado',   label:'Conv. Firmado',    weeks:'—' },
   { initials:'AB', name:'Ahmed Benali',           cycle:'CFGM Int. Social',       company:'Pendiente asignación',   status:'pendiente', label:'Pendiente',        weeks:'—' },
@@ -621,7 +649,7 @@ function renderOffers() {
       <div class="offer-company">${o.company}</div>
       <div class="offer-title">${o.title}</div>
       <div class="offer-meta-row">
-        <span class="offer-chip ${o.type === 'FCT' ? 'fct' : 'empleo'}">${o.type}</span>
+        <span class="offer-chip ${o.type === 'FP Dual' ? 'fp-dual' : 'empleo'}">${o.type}</span>
         <span class="offer-chip">📍 ${o.location}</span>
         <span class="offer-chip">⏱ ${o.duration}</span>
       </div>
@@ -647,7 +675,7 @@ function renderOfferDetail() {
     </div>
     <h2 class="offer-detail-title bebas">${o.title}</h2>
     <div class="offer-chips-row">
-      <span class="offer-chip ${o.type === 'FCT' ? 'fct' : 'empleo'}">${o.type}</span>
+      <span class="offer-chip ${o.type === 'FP Dual' ? 'fp-dual' : 'empleo'}">${o.type}</span>
       <span class="offer-chip">📍 ${o.location}</span>
       <span class="offer-chip">⏱ ${o.duration}</span>
       <span class="offer-chip">📚 ${o.cycle}</span>
@@ -667,7 +695,7 @@ function renderTutorPanel() {
   const statsEl = document.getElementById('tutor-stats');
   if (statsEl) {
     const stats = [
-      { num: '10', label: 'Alumnos/as en seguimiento' },
+      { num: '11', label: 'Alumnos/as en seguimiento' },
       { num: '5',  label: 'Empresas activas' },
       { num: '5',  label: 'Convenios pendientes' },
       { num: '94%',label: 'Satisfacción empresas' },
@@ -727,11 +755,11 @@ function renderTutorPanel() {
   const datesEl = document.getElementById('dates-list');
   if (datesEl) {
     const dates = [
-      { fecha: '15 Sep', text: 'Inicio FCT — Grupo A (3 alumnos/as)' },
+      { fecha: '15 Sep', text: 'Inicio FP Dual — Grupo A (3 alumnos/as)' },
       { fecha: '30 Sep', text: 'Límite entrega convenios firmados' },
       { fecha: '10 Oct', text: '1ª Visita empresas Grupo A' },
-      { fecha: '20 Ene', text: 'Fin FCT — Grupo A · Evaluación final' },
-      { fecha: '10 Feb', text: 'Inicio FCT — Grupo B (2 alumnos/as)' },
+      { fecha: '20 Ene', text: 'Fin FP Dual — Grupo A · Evaluación final' },
+      { fecha: '10 Feb', text: 'Inicio FP Dual — Grupo B (2 alumnos/as)' },
     ];
     datesEl.innerHTML = dates.map(d => `
       <div style="display:flex;gap:16px;padding:10px 0;border-bottom:1px solid var(--border);align-items:center">

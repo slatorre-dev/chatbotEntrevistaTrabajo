@@ -98,7 +98,15 @@ nav {
   background: radial-gradient(circle, rgba(255,92,26,0.08), transparent 70%);
   pointer-events: none;
 }
-.hero-content { position: relative; z-index: 1; max-width: 900px; }
+.hero-content {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr 360px; grid-template-rows: auto auto;
+  gap: 0 56px; align-items: center; max-width: 1160px;
+}
+.hero-text { /* left column */ }
+.hero-illustration { display: flex; align-items: center; justify-content: center; }
+.hero-svg { width: 100%; max-width: 360px; }
+.hero-stats { grid-column: 1 / -1; }
 .hero-tag {
   display: inline-flex; align-items: center; gap: 8px;
   border: 1px solid var(--orange); padding: 5px 14px;
@@ -113,7 +121,7 @@ nav {
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
 .hero h1 {
   font-family: 'Bebas Neue';
-  font-size: clamp(72px, 10vw, 140px);
+  font-size: clamp(44px, 5.5vw, 88px);
   line-height: .92; letter-spacing: .02em;
   color: var(--text); margin-bottom: 8px;
 }
@@ -547,7 +555,7 @@ footer a:hover { color: var(--orange); }
   font-size: 11px; padding: 2px 10px; border: 1px solid var(--border);
   color: var(--text-dim); background: var(--graphite);
 }
-.offer-chip.fct    { border-color: var(--orange); color: var(--orange); }
+.offer-chip.fp-dual { border-color: var(--orange); color: var(--orange); }
 .offer-chip.empleo { border-color: var(--green);  color: var(--green);  }
 .offer-detail { background: var(--coal); border: 1px solid var(--border); padding: 32px; }
 .company-header { display: flex; gap: 16px; align-items: center; margin-bottom: 28px; }
@@ -637,7 +645,8 @@ tr:hover td { background: var(--graphite); }
   .section { padding: 60px 20px; }
   .roles-grid, .steps { grid-template-columns: 1fr; }
   .ods-grid { grid-template-columns: repeat(3, 1fr); }
-  .gender-banner { flex-direction: column; gap: 12px; padding: 20px; }
+  .hero-content { grid-template-columns: 1fr; }
+  .hero-illustration { display: none; }
   .app-layout { grid-template-columns: 1fr; }
   .sidebar { display: none; }
   .main-content { padding: 20px; }
