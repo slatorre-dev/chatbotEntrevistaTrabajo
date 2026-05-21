@@ -52,3 +52,7 @@ Formato: versión — fecha UTC — breve descripción.
 - Versión generada automáticamente por workflow en commit 72ede68ee2020b80893db2beb74baf328b318613 por slatorre-dev
 - Referencia: memoria_claude.md
 
+## 0.3.4 - 2026-05-21T03:58:47Z
+- Versión generada automáticamente por workflow en commit c4858eb5604f11bee9f27f349eef5fe2517acb2a por slatorre-dev
+- Referencia: memoria_claude.md
+
