@@ -1,4 +1,4 @@
-/* ── Variables (FPConnect) ─────────────────────────── */
+/* ── Variables (TinJobs) ───────────────────────────── */
 :root {
   --black:       #0a0a0a;
   --coal:        #141414;
@@ -189,6 +189,39 @@ nav {
 .step h4 { font-family: 'Bebas Neue'; font-size: 22px; margin-bottom: 8px; }
 .step p  { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
 
+/* ══ ODS COMMITMENT SECTION ═════════════════════════ */
+.section-sub {
+  color: var(--text-dim); font-size: 16px; max-width: 640px;
+  margin-bottom: 40px; line-height: 1.7;
+}
+.ods-grid {
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px; margin-bottom: 24px;
+}
+.ods-card {
+  background: var(--coal); padding: 28px 16px; text-align: center;
+  border-top: 4px solid var(--ods-c, var(--orange));
+  transition: transform .2s; cursor: default;
+}
+.ods-card:hover { transform: translateY(-4px); }
+.ods-num {
+  font-family: 'Bebas Neue'; font-size: 56px; color: var(--ods-c, var(--orange)); line-height: 1;
+}
+.ods-lbl {
+  font-size: 11px; color: var(--text-dim); text-transform: uppercase;
+  letter-spacing: .06em; margin-top: 8px; line-height: 1.4;
+}
+.gender-banner {
+  display: flex; align-items: center; gap: 24px;
+  background: var(--coal); border: 1px solid var(--border);
+  border-left: 4px solid #FF3A21; padding: 28px 32px;
+}
+.gender-icon { font-size: 2.8rem; flex-shrink: 0; }
+.gender-banner strong {
+  font-family: 'Bebas Neue'; font-size: 24px; letter-spacing: .05em;
+  display: block; margin-bottom: 6px; color: var(--text);
+}
+.gender-banner p { color: var(--text-dim); font-size: 14px; line-height: 1.7; margin: 0; max-width: 700px; }
+
 .cta-section {
   margin: 0 40px 80px; background: var(--coal);
   border: 1px solid var(--border); padding: 60px;
@@ -196,7 +229,7 @@ nav {
   gap: 40px; flex-wrap: wrap; position: relative; overflow: hidden;
 }
 .cta-section::before {
-  content: 'FP'; position: absolute; right: -20px; top: -20px;
+  content: 'TJ'; position: absolute; right: -20px; top: -20px;
   font-family: 'Bebas Neue'; font-size: 200px; color: var(--border);
   line-height: 1; pointer-events: none; opacity: .4;
 }
@@ -582,10 +615,12 @@ tr:hover td { background: var(--graphite); }
 .oc-mini.c3  { background: #4C9F38; }
 .oc-mini.c4  { background: #C5192D; }
 .oc-mini.c5  { background: #FF3A21; }
+.oc-mini.c7  { background: #FCC30B; color: #000; }
 .oc-mini.c8  { background: #A21942; }
 .oc-mini.c9  { background: #FD6925; }
 .oc-mini.c10 { background: #DD1367; }
 .oc-mini.c13 { background: #3F7E44; }
+.oc-mini.c16 { background: #00689D; }
 .oc-mini.c17 { background: #19486A; }
 
 /* ── Responsive ────────────────────────────────────── */
@@ -601,6 +636,8 @@ tr:hover td { background: var(--graphite); }
   .hero { padding: 100px 20px 60px; }
   .section { padding: 60px 20px; }
   .roles-grid, .steps { grid-template-columns: 1fr; }
+  .ods-grid { grid-template-columns: repeat(3, 1fr); }
+  .gender-banner { flex-direction: column; gap: 12px; padding: 20px; }
   .app-layout { grid-template-columns: 1fr; }
   .sidebar { display: none; }
   .main-content { padding: 20px; }
